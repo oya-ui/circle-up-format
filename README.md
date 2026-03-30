@@ -8,8 +8,9 @@
 python3 dashboard/build_dashboard.py
 ```
 
-生成物: `声掛け_dashboard.html`  
-詳細: [dashboard/README.md](dashboard/README.md)
+生成物: `声掛け_dashboard.html` と **`index.html`（同一・Netlify のトップ用）**  
+詳細: [dashboard/README.md](dashboard/README.md)  
+Netlify は **`index.html` がリポジトリルート** にないと `/` が 404 になる。`netlify.toml` で `publish = "."` を指定済み。
 
 ## その他
 

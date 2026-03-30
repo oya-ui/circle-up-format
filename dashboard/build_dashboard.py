@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-声掛け管理シート（CSV export）を取得し、声掛け_dashboard.html を生成する。
+声掛け管理シート（CSV export）を取得し、声掛け_dashboard.html と index.html（Netlify 用の同一内容）を生成する。
 
 使い方:
   cd .../運用/dashboard
@@ -28,6 +28,7 @@ ROOT = DIR.parent
 CONFIG_PATH = DIR / "config.json"
 MEMO_PATH = DIR / "daily_memo.txt"
 OUT_HTML = ROOT / "声掛け_dashboard.html"
+OUT_INDEX = ROOT / "index.html"  # Netlify 等はルートの index.html を既定で配信する
 SNAPSHOT_PATH = DIR / "last_snapshot.csv"
 
 HEADERS_EXPECTED = [
@@ -406,7 +407,9 @@ def main() -> int:
         source_note=source_note,
     )
     OUT_HTML.write_text(html, encoding="utf-8")
+    OUT_INDEX.write_text(html, encoding="utf-8")
     print(f"Wrote {OUT_HTML}")
+    print(f"Wrote {OUT_INDEX} (Netlify / ルートURL用)")
     print(f"  有効行: {len(valid)}  エリア種別: {len(by_area)}  ステージ種別: {len(by_stage)}")
     return 0
 

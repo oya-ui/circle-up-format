@@ -14,7 +14,13 @@ cd "/Users/oyataiga/Documents/Obsidian Vault/business/01_project/サークルア
 python3 dashboard/build_dashboard.py
 ```
 
-ブラウザで同フォルダの **`声掛け_dashboard.html`** を開く。
+ブラウザで同フォルダの **`声掛け_dashboard.html`** を開く（**`index.html` も同内容で生成** — Netlify の `/` 用）。
+
+## Netlify で 404 になるとき
+
+- サイトの **Publish directory** が **`.`（空・リポジトリルート）** になっているか確認（`netlify.toml` で指定済み）。
+- **Base directory** を `dashboard` などにしていないか確認（ルートに `index.html` が必要）。
+- デプロイ前に `python3 dashboard/build_dashboard.py` を実行し、**`index.html` をコミット・プッシュ**する（Netlify の無料枠だけではスプレッドシート取得はしない想定）。
 
 ## ファイル
 
