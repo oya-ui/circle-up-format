@@ -1,0 +1,27 @@
+{
+  "csvExportUrl": "https://docs.google.com/spreadsheets/d/1uNaJwu_lgTapR4o8RG5PIUPqn8BnopdZFvFVc5PpRc8/export?format=csv&gid=0",
+  "g1": {
+    "label": "G1 声掛け（有効団体＝正式名称あり）",
+    "perAreaTarget": {
+      "仙台": 10,
+      "東京": 10,
+      "札幌": 10
+    },
+    "note": "目標はエリアごと件数。実績は声掛けシートの有効行をエリア別にカウント。"
+  },
+  "g2": {
+    "label": "G2 HP作成",
+    "description": "依頼〜納品（公開または納品MTG完了）",
+    "target": 5,
+    "actual": null,
+    "unit": "団体"
+  },
+  "g3": {
+    "label": "G3 採用接点",
+    "description": "Geek長期インターン等・採用に進みうる接点",
+    "target": 2,
+    "actual": null,
+    "unit": "名"
+  },
+  "stageOrder": []
+}

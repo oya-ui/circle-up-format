@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>サークルアップ連携PJ｜声掛けダッシュボード</title>
+  <style>
+    :root {
+      --bg: #f4f5f8;
+      --card: #fff;
+      --text: #1c1f26;
+      --muted: #5a6270;
+      --border: #dde1ea;
+      --accent: #1d4ed8;
+      --accent-soft: #eff6ff;
+      --ok: #15803d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 1.25rem 1rem 2rem;
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .wrap { max-width: 960px; margin: 0 auto; }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1rem;
+    }
+    h1 { margin: 0; font-size: 1.35rem; }
+    .meta { font-size: 0.85rem; color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+    .kpi .t { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .kpi .v { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; margin-top: 0.2rem; }
+    .kpi .sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.15rem 1.15rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+    h2 {
+      margin: 0 0 0.65rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { border: 1px solid var(--border); padding: 0.45rem 0.55rem; text-align: left; vertical-align: middle; }
+    th { background: var(--accent-soft); font-weight: 600; }
+    tr:nth-child(even) td { background: #fafbfd; }
+    .num { font-variant-numeric: tabular-nums; text-align: right; font-weight: 600; }
+    .bar {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      overflow: hidden;
+      min-width: 80px;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+    .bar-stage span { background: #6366f1; }
+    pre.memo {
+      margin: 0;
+      white-space: pre-wrap;
+      font-family: inherit;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .hint { font-size: 0.78rem; color: var(--muted); margin: 0.5rem 0 0; }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+    code { font-size: 0.85em; background: #f1f5f9; padding: 0.1em 0.35em; border-radius: 4px; }
+    footer { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>サークルアップ連携PJ｜声掛けダッシュボード</h1>
+      <span class="meta">データ取得: 2026-03-30 14:01 JST<br />CSV export（最新を取得）</span>
+    </header>
+
+    <div class="grid">
+      <div class="kpi">
+        <div class="t">G1 有効団体（全体）</div>
+        <div class="v">3 <span style="font-size:0.95rem;font-weight:600;color:var(--muted)">/ 目標合計 30</span></div>
+        <div class="sub">G1 声掛け（有効団体＝正式名称あり）</div>
+      </div>
+      <div class="kpi">
+        <div class="t">G2 HP作成</div>
+        <div class="v">— <span style="font-size:0.95rem;font-weight:600;color:var(--muted)">/ 5</span></div>
+        <div class="sub">依頼〜納品（公開または納品MTG完了）（実績は <code>config.json</code>）</div>
+      </div>
+      <div class="kpi">
+        <div class="t">G3 採用接点</div>
+        <div class="v">— <span style="font-size:0.95rem;font-weight:600;color:var(--muted)">/ 2</span></div>
+        <div class="sub">Geek長期インターン等・採用に進みうる接点（実績は <code>config.json</code>）</div>
+      </div>
+    </div>
+
+    <section class="card">
+      <h2>エリア別（実績 / 目標）</h2>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>エリア</th><th class="num">実績</th><th class="num">目標</th><th>進捗</th></tr></thead>
+          <tbody>
+            <tr><td><strong>仙台</strong></td><td class="num">1</td><td class="num">10</td><td><div class="bar"><span style="width:10%"></span></div></td></tr><tr><td><strong>東京</strong></td><td class="num">1</td><td class="num">10</td><td><div class="bar"><span style="width:10%"></span></div></td></tr><tr><td><strong>札幌</strong></td><td class="num">0</td><td class="num">10</td><td><div class="bar"><span style="width:0%"></span></div></td></tr><tr><td><strong>関西</strong></td><td class="num">1</td><td class="num">—</td><td><div class="bar"><span style="width:0%"></span></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>ステージ別（有効団体の人数）</h2>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>ステージ</th><th class="num">件数</th><th>内訳バー（最大比）</th></tr></thead>
+          <tbody>
+            <tr><td>くすさん三角LG済</td><td class="num">1</td><td><div class="bar bar-stage"><span style="width:100%"></span></div></td></tr><tr><td>フォーム送付済</td><td class="num">1</td><td><div class="bar bar-stage"><span style="width:100%"></span></div></td></tr><tr><td>中間報告調整済</td><td class="num">1</td><td><div class="bar bar-stage"><span style="width:100%"></span></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="hint">並び順は <code>dashboard/config.json</code> の <code>stageOrder</code>（先に書いた順）。空なら五十音順相当。</p>
+    </section>
+
+    <section class="card"><h2>当日メモ・見込み</h2><pre class="memo">【当日メモ・見込み】ここを会議直前などに編集してから build_dashboard.py を実行してください。
+
+例:
+・今週フォーム打診に進めそうなのはあと2団体くらい
+・三角LINEは来週集中で回す予定</pre><p class="hint">編集: <code>dashboard/daily_memo.txt</code> → 再実行</p></section>
+
+    <footer>
+      生成: <code>python3 dashboard/build_dashboard.py</code> ・ 設定: <code>dashboard/config.json</code>
+    </footer>
+  </div>
+</body>
+</html>

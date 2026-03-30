@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>サークルアップ × Geek 連携PJ｜長期インターン向けオペレーション説明</title>
+  <style>
+    :root {
+      --bg: #f8f9fb;
+      --card: #fff;
+      --text: #1a1d21;
+      --muted: #5c6370;
+      --border: #e2e5eb;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --code-bg: #f1f3f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2rem 1.25rem 3rem;
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .doc {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card);
+      padding: 2rem 2.25rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      line-height: 1.35;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+    .lead {
+      background: var(--accent-soft);
+      padding: 1rem 1.15rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin: 2rem 0 0.85rem;
+      padding-left: 0.65rem;
+      border-left: 4px solid var(--accent);
+    }
+    h3 {
+      font-size: 1rem;
+      margin: 1.35rem 0 0.6rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.75rem 0;
+    }
+    p { margin: 0.65rem 0; }
+    ul { margin: 0.5rem 0 0.85rem; padding-left: 1.35rem; }
+    li { margin: 0.35rem 0; }
+    strong { font-weight: 600; }
+    a { color: var(--accent); }
+    .table-wrap { overflow-x: auto; margin: 0.75rem 0 1rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: #fafbfc; }
+    pre.sample {
+      background: var(--code-bg);
+      padding: 1rem 1.15rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      padding-left: 1.4rem;
+      position: relative;
+    }
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+    .summary {
+      font-size: 1.02rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-top: 0.5rem;
+    }
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .doc { box-shadow: none; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <article class="doc">
+    <h1>サークルアップ × Geek 連携PJ｜長期インターン向けオペレーション説明</h1>
+
+    <div class="lead">
+      <strong>この資料の目的</strong><br />
+      面談・打ち合わせまでの導線をつないでいただく長期インターンの方が、<strong>プロジェクトの全体像と、自分がやるべきことを迷わず実行できる</strong>ようにまとめたものです。前提知識は不要です。
+    </div>
+
+    <h2>1. このPJの目的と背景</h2>
+
+    <h3>1.1 サークルアップ（Circle Up）とは</h3>
+    <ul>
+      <li><strong>何のサービスか</strong><br />企業の案件（イベント参加で報酬がもらえる、など）と<strong>大学のサークル</strong>をつなぐ<strong>マッチング型のプラットフォーム</strong>です。<br />公式: <a href="https://www.circle-app.jp/" target="_blank" rel="noopener">https://www.circle-app.jp/</a></li>
+      <li><strong>誰のためのサービスか（ざっくり）</strong>
+        <ul>
+          <li><strong>企業側</strong>: 若年層（主に大学1〜3年程度）へのリーチ、就活イベントへの参加依頼、美容・着物など季節ニーズへの露出、など。</li>
+          <li><strong>サークル側</strong>: 活動費や新歓の資金が欲しい、協賛を探したい、など。</li>
+        </ul>
+      </li>
+      <li><strong>収益のイメージ</strong><br />企業が案件に払う金額に対し、運営が手数料をいただくビジネスモデルです（詳細は社内説明に準拠）。</li>
+    </ul>
+
+    <h3>1.2 Geek・エンカレッジとの関係</h3>
+    <ul>
+      <li><strong>Geek（ジーク）</strong><br />プログラミング学習・長期インターンなどを扱うブランド／コミュニティです。このPJでは、<strong>サークル幹部とGeekのメンター／長期インターンとの接点</strong>を増やすことが目的の一つです。</li>
+      <li><strong>エンカレッジ（en-courage）</strong><br />就活支援などを行うサービス。<strong>メンター経由でサークル幹部にアプローチする</strong>経路として使います。</li>
+    </ul>
+
+    <h3>1.3 なぜこのPJをやっているか（背景）</h3>
+    <ul>
+      <li>サークルアップ事業を<strong>本格的に伸ばす</strong>フェーズにあり、<strong>実際にサークルに使ってもらう</strong>ことが重要になっている。</li>
+      <li>一方で、「サークルアップを使いたい」というニーズは<strong>団体・タイミングによって差が大きい</strong>（特に<strong>お金の管理に関わる役職</strong>に刺さりやすい、などの学びがある）。</li>
+      <li>そこで <strong>新歓の時期の悩み（人数・認知・資金）</strong> に寄り添い、<strong>新歓用のWeb（紹介ページ）の代行</strong>をフックにして接点を作り、その流れの中で<strong>サークルアップの利用</strong>と<strong>Geekの訴求</strong>につなげる、という設計です。</li>
+    </ul>
+
+    <h3>1.4 このPJで目指していること（一文）</h3>
+    <p class="summary"><strong>サークル幹部との信頼できる接点をつくり、新歓に役立つ納品（Web）を通じてサークルアップ導入とGeekの認知・採用導線に結びつけること。</strong></p>
+
+    <hr />
+
+    <h2>2. インパクト（何がうれしいか）</h2>
+
+    <h3>2.1 サークル（幹部）にとって</h3>
+    <ul>
+      <li>新歓で使える<strong>サークル紹介のWeb</strong>が整い、<strong>外部に見せる窓口</strong>ができる。</li>
+      <li>活動費・新歓費の足しに、<strong>サークルアップ経由の案件</strong>を検討できるようになる可能性がある。</li>
+    </ul>
+
+    <h3>2.2 サークルアップ事業にとって</h3>
+    <ul>
+      <li><strong>実利用の団体</strong>が増え、掲載・案件の両面でデータと認知が積み上がる。</li>
+    </ul>
+
+    <h3>2.3 Geekにとって</h3>
+    <ul>
+      <li><strong>サークル幹部</strong>（リーダー経験のある学生）との<strong>自然な接点</strong>ができる。</li>
+      <li>長期インターンやメンター紹介など、<strong>採用・コミュニティ拡張</strong>に使える。</li>
+    </ul>
+
+    <h3>2.4 あなた（長期インターン）にとって</h3>
+    <ul>
+      <li><strong>営業・プロジェクト推進・ステークホルダー調整</strong>の実践になる。</li>
+      <li>成果に応じた<strong>インセンティブ設計</strong>がある場合は、別紙の契約・説明に従う（※金額・条件は担当から必ず確認すること）。</li>
+    </ul>
+
+    <hr />
+
+    <h2>3. リスク・注意点（事前に知っておくこと）</h2>
+
+    <h3>3.1 ニーズが必ずあるわけではない</h3>
+    <p>「協賛を探しているフェーズ」ではない団体や、<strong>予算・会計に関わる人に届いていない</strong>場合、サークルアップの話は響きにくいことがあります。<strong>断られて当然</strong>と考え、<strong>無理に押し売りしない</strong>こと。関係が壊れないよう、丁寧なコミュニケーションを優先してください。</p>
+
+    <h3>3.2 「HP代行」単体だけが目的に見えると危険</h3>
+    <p>ペライチ等ですでに満足している団体もあります。訴求の軸は <strong>「新歓の入口・認知のためのページ」</strong> や <strong>「新歓・運営の困りごとに寄り添う」</strong> であることが重要です（過去の合意事項に準拠）。</p>
+
+    <h3>3.3 説明不足・フォロー不足</h3>
+    <p>インフル・多忙などで<strong>計画の全体像が伝わらないまま</strong>止まると、後から信頼を損ねます。<strong>再日程・フォロー</strong>を自分のタスクとして管理してください。</p>
+
+    <h3>3.4 技術・ツールの制約</h3>
+    <p>Web制作には <strong>Cursor・GitHub・Netlify等</strong> を使う想定があり、<strong>学生プラン申請に時間がかかる</strong>場合があります。納品時期は<strong>現実的なスケジュール</strong>で幹部と合意してください。</p>
+
+    <h3>3.5 個人情報・連絡先</h3>
+    <p>取得した電話番号・LINE・メール等は、<strong>目的外利用をせず</strong>、社内ルール（個人情報・営業ツールの取り扱い）に従ってください。</p>
+
+    <hr />
+
+    <h2>4. やってほしいこと（役割の全体像）</h2>
+    <p>あなたの役割はざっくり <strong>次の流れを途切れさせないこと</strong> です。</p>
+    <ol>
+      <li><strong>サークル幹部に打診</strong>する（新歓用Webの代行・サークルアップの導線の説明）。</li>
+      <li><strong>依頼情報を集める</strong>（フォーム提出の促し）。</li>
+      <li><strong>LINEグループ（LG）等の場をつくり</strong>、関係者をつなぐ。</li>
+      <li><strong>納品の打ち合わせ</strong>の日程を決め、<strong>幹部が必ず参加する状態</strong>にする。</li>
+      <li>打ち合わせの場で、<strong>サークルアップ担当・Geek側の訴求</strong>ができるよう<strong>設計に関与</strong>する（台本・タイミングは後述）。</li>
+    </ol>
+    <p>※ <strong>実際のWebの制作作業</strong>を誰が行うか（メンター／別担当／あなた）は、<strong>その時点の運用ルール</strong>に従ってください。不明なときは必ず担当に確認してください。</p>
+
+    <hr />
+
+    <h2>5. スケジュール感（何をいつまでに）</h2>
+    <p>※締切は<strong>プロジェクト全体のマイルストーン</strong>に合わせて変わります。数字は<strong>例</strong>です。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>フェーズ</th><th>やること</th><th>目安</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>打診</strong></td>
+            <td>対象団体のリストアップ、最初のメッセージ／声掛け</td>
+            <td>担当から指示された期限まで</td>
+          </tr>
+          <tr>
+            <td><strong>フォーム回収</strong></td>
+            <td>サークル名・紹介文・画像・代表連絡先などの提出</td>
+            <td>打診から数日〜1週間以内（幹部の都合を聞く）</td>
+          </tr>
+          <tr>
+            <td><strong>LG作成・接続</strong></td>
+            <td>幹部・Geek担当・社内関係者を入れたグループを作る</td>
+            <td>フォーム提出後すぐ</td>
+          </tr>
+          <tr>
+            <td><strong>納品MTG設定</strong></td>
+            <td>カレンダー調整、<strong>幹部2名以上参加</strong>を条件に確定</td>
+            <td>早いほどよい（新歓シーズンに合わせる）</td>
+          </tr>
+          <tr>
+            <td><strong>納品MTG実施</strong></td>
+            <td>画面共有・確認、サークルアップ／Geekの説明</td>
+            <td>1回60〜90分想定のことも</td>
+          </tr>
+          <tr>
+            <td><strong>フォロー</strong></td>
+            <td>修正依頼、サークルアップ本登録のフォロー、次のアクション</td>
+            <td>MTG後〜</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>遅れそうなとき</strong>は、一人で抱え込まず<strong>必ず担当（大谷・楠・教室長等）に相談</strong>してください。</p>
+
+    <hr />
+
+    <h2>6. 幹部への打診コミュニケーション（例と心構え）</h2>
+
+    <h3>6.1 心構え</h3>
+    <ul>
+      <li><strong>押し売りではなく「新歓の役に立てれば」</strong>というスタンス。</li>
+      <li>最初から長い説明をせず、<strong>興味があれば詳しく話す</strong>二段構えにすると返信が返りやすいです。</li>
+      <li><strong>幹部は多忙</strong>なので、一文目でメリットが伝わるようにする。</li>
+    </ul>
+
+    <h3>6.2 伝えたい核（必ず伝わるように）</h3>
+    <ol>
+      <li><strong>新歓で使える紹介ページ</strong>を、こちらで<strong>代行で作る</strong>（または一緒に作る）提案があること。</li>
+      <li><strong>情報をフォームで送ってもらえれば</strong>、打ち合わせで方向性をすり合わせること。</li>
+      <li>打ち合わせでは<strong>サークルの代表・新歓関係の役職の方に参加</strong>してもらうこと（<strong>2名以上</strong>が望ましい、という条件がある場合はその旨を明確に）。</li>
+      <li>あわせて、<strong>活動費を補う仕組み</strong>として<strong>サークルアップ</strong>の紹介があること（詳細は専門担当が説明する）。</li>
+    </ol>
+
+    <h3>6.3 メッセージ例（コピーして調整可）</h3>
+    <pre class="sample">はじめまして、〇〇でサークル支援の連携をしている△△です。
+
+新歓の時期に向けて、サークルの紹介がわかりやすく載る
+簡単なWebページを、無料で作成する取り組みをしています。
+
+もしよければ、活動内容や写真などをフォームで送っていただき、
+一度オンラインで打ち合わせさせてください。
+その場で画面イメージもお見せしつつ、方向性を一緒に決めたいです。
+
+参加は、サークル代表さんと新歓まわりの役職の方など、
+2名以上いらしていただけると助かります。
+
+あわせて、活動費の補助につながるサービス（サークルアップ）のご紹介も
+担当からあります。興味があればその場で説明します。
+
+まずは下記フォームから情報をいただけると嬉しいです。
+https://docs.google.com/forms/d/e/1FAIpQLSeFVBEoz5WxbuBQQ8pHczL3kePpmTCcD34eieh0Tgg8ynYjgQ/viewform
+
+ご不明点あれば、このメッセージに返信ください。</pre>
+    <p>※ トーンは <strong>LINE／メール／DM</strong> に合わせて短くしてもOKです。</p>
+
+    <h3>6.4 よくある質問への答え方（目安）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>質問</th><th>答えの方向性</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>本当に無料？</td>
+            <td>今回の枠では〇〇まで無料、など<strong>担当と揃えた表現</strong>を使う。曖昧なら担当確認。</td>
+          </tr>
+          <tr>
+            <td>サークルアップは必須？</td>
+            <td><strong>強制ではない</strong>が、新歓費・活動費の補助の選択肢として紹介する。興味がある方のみ詳細。</td>
+          </tr>
+          <tr>
+            <td>誰が作るの？</td>
+            <td>社内・メンター・ツールを使った制作、など<strong>その時の運用</strong>に合わせる。嘘をつかない。</td>
+          </tr>
+          <tr>
+            <td>いつまでにできる？</td>
+            <td>素材そろい次第・学生プラン等の都合もあり<strong>目安</strong>で、打ち合わせで確定する。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr />
+
+    <h2>7. 納品の場（MTG）の設定</h2>
+
+    <h3>7.1 なぜ「場」を必ず設定するか</h3>
+    <ul>
+      <li>画面で確認しながら<strong>認識のズレを防ぐ</strong>ため。</li>
+      <li><strong>サークルアップ・Geekの説明</strong>を、幹部がいる状態で行うため（録画ポリシーは事前に合意）。</li>
+    </ul>
+
+    <h3>7.2 参加者（理想）</h3>
+    <ul>
+      <li><strong>サークル側</strong>: 代表クラス＋新歓・広報まわりなど、<strong>最低2名</strong>（プロジェクトでそう決めている場合）。</li>
+      <li><strong>あなた（インターン）</strong>: 進行補助、フォーム内容の確認。</li>
+      <li><strong>Geek担当・メンター</strong>（制作担当がいる場合）。</li>
+      <li><strong>サークルアップ事業担当</strong>（導入説明をする人）。</li>
+      <li><strong>社内オーナー</strong>（必要に応じて）。</li>
+    </ul>
+
+    <h3>7.3 幹部に来てもらうコツ</h3>
+    <ul>
+      <li>日程調整は <strong>候補を3つ</strong>出す。</li>
+      <li><strong>「決定権のある人がいないと次に進めない」</strong>理由を一言添える。</li>
+      <li>前日に <strong>リマインド</strong>（LINE／カレンダー招待）。</li>
+    </ul>
+
+    <hr />
+
+    <h2>8. MTGの流れと「訴求」の設計（サークルアップ・Geek）</h2>
+
+    <h3>8.1 おすすめの時間配分（例：60分）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>時間</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0〜5分</td><td>挨拶、参加者確認、今日のゴール（納品確認＋サービス紹介）</td></tr>
+          <tr><td>5〜35分</td><td><strong>納品物の確認</strong>（トップ、写真、文章、連絡先、スマホ表示）</td></tr>
+          <tr><td>35〜50分</td><td><strong>サークルアップ</strong>の説明（事業担当）— 幹部の質疑</td></tr>
+          <tr><td>50〜60分</td><td><strong>Geek長期インターン</strong>の紹介（自然な流れで。興味ある人向け）</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>※ 納品が長引く日は、<strong>サークルアップを先に短く</strong>してもよいなど、<strong>担当と事前に合意</strong>してください。</p>
+
+    <h3>8.2 訴求の順番の理由</h3>
+    <ol>
+      <li><strong>まず納品で信頼と文脈を作る</strong>（「約束したことをやった」）。</li>
+      <li><strong>その後で活動費の話（サークルアップ）</strong>が入りやすい。</li>
+      <li><strong>キャリア・スキル（Geek）</strong>は、幹部個人の関心が出たタイミングで深掘りしやすい。</li>
+    </ol>
+
+    <h3>8.3 Geekを話すときのポイント</h3>
+    <ul>
+      <li><strong>押し込みではなく「知っておいてほしい選択肢」</strong>として。</li>
+      <li><strong>サークル運営で培った経験</strong>と、<strong>インターンで得られる経験</strong>がつながる話がしやすい。</li>
+      <li>詳細は <strong>Geek側の公式説明・スライド</strong>があればそれに任せ、あなたは<strong>ファシリテーション</strong>に徹する。</li>
+    </ul>
+
+    <h3>8.4 サークルアップを話すときのポイント</h3>
+    <ul>
+      <li><strong>事業担当が主役</strong>。あなたは<strong>幹部の不安（手間・料金・何をするか）</strong>を拾って担当に渡す。</li>
+      <li><strong>導入までのステップ</strong>（アカウント、掲載、案件の探し方）を最後に整理しておくと幹部が動きやすい。</li>
+    </ul>
+
+    <hr />
+
+    <h2>9. 納品に関するオペレーション（実務チェックリスト）</h2>
+
+    <h3>9.1 納品前</h3>
+    <p><strong>依頼フォーム（回答用）</strong><br /><a href="https://docs.google.com/forms/d/e/1FAIpQLSeFVBEoz5WxbuBQQ8pHczL3kePpmTCcD34eieh0Tgg8ynYjgQ/viewform" target="_blank" rel="noopener">https://docs.google.com/forms/d/e/1FAIpQLSeFVBEoz5WxbuBQQ8pHczL3kePpmTCcD34eieh0Tgg8ynYjgQ/viewform</a>（一覧: <code>運用_リンク一覧.md</code>）</p>
+    <ul class="checklist">
+      <li>フォームの必須項目が揃っている（サークル名、紹介、活動内容、人数、代表連絡先など）</li>
+      <li>写真はフォームでは受け付けずLINEアルバム等の前提のため、送付済み／送付予定のすり合わせができている</li>
+      <li>画像の画質・横長縦長の指定があれば満たしている</li>
+      <li>公開URLの掲載先（Netlify等）がわかる</li>
+      <li>修正の一回目締切・連絡手段（LINE／メール）が決まっている</li>
+    </ul>
+
+    <h3>9.2 納品MTG中</h3>
+    <ul class="checklist">
+      <li>スマホ表示を必ず見せる</li>
+      <li>誤字・サークル名・連絡先の最終確認</li>
+      <li>「公開してよいか」の<strong>言葉でのOK</strong>をもらう</li>
+    </ul>
+
+    <h3>9.3 納品後</h3>
+    <ul class="checklist">
+      <li>公開URLを幹部に送付</li>
+      <li>軽い修正の期限を伝える</li>
+      <li>サークルアップの<strong>次のアクション</strong>（誰がアカウントを作るか、いつまでか）をメモ</li>
+      <li>Geek興味ありの学生がいれば<strong>担当へ引き継ぎ</strong>（連絡先・希望の確認）</li>
+    </ul>
+
+    <h3>9.4 トラブル時</h3>
+    <p>クレーム・法的表現・写真の権利などは<strong>即担当にエスカレーション</strong>。一人で判断しない。</p>
+
+    <hr />
+
+    <h2>10. 困ったとき・質問するとき</h2>
+    <ul>
+      <li><strong>契約・報酬・インセンティブの数字</strong> → 必ず<strong>事業担当／契約の窓口</strong>に確認。</li>
+      <li><strong>サークルアップの仕様・案件内容</strong> → <strong>サークルアップ事業担当</strong>。</li>
+      <li><strong>Geekの採用・インターン詳細</strong> → <strong>Geek／採用担当</strong>。</li>
+      <li><strong>日程・LGの作り方・誰を入れるか</strong> → <strong>このPJのオーナー（例：大谷・楠・教室長）</strong>。</li>
+    </ul>
+
+    <hr />
+
+    <h2>11. 一文まとめ</h2>
+    <p class="summary"><strong>幹部に誠実に打診し、フォームとMTGを確実に通し、納品の場でサークルアップとGeekの話がちゃんと届くように進行する——それが、このPJでのあなたのオペレーションの中心です。</strong></p>
+
+    <p class="footer">本資料は運用に合わせて更新します。最新版の場所を担当から確認してください。</p>
+  </article>
+</body>
+</html>

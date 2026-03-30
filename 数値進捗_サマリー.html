@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>サークルアップ連携PJ｜数値進捗サマリー</title>
+  <style>
+    :root {
+      --bg: #f4f5f8;
+      --card: #fff;
+      --text: #1c1f26;
+      --muted: #5a6270;
+      --border: #dde1ea;
+      --accent: #1d4ed8;
+      --accent-soft: #eff6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 1.5rem 1rem 2rem;
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .sheet {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.07);
+      padding: 1.5rem 1.75rem 1.75rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    h2 {
+      margin: 1.25rem 0 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 0.4rem 0 0.75rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    tr:nth-child(even) td { background: #fafbfd; }
+    .num { font-variant-numeric: tabular-nums; text-align: right; font-weight: 600; }
+    .summary {
+      margin-top: 1.25rem;
+      padding: 0.85rem 1rem;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .summary strong { color: var(--text); }
+    .note {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .sheet { box-shadow: none; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <h1>サークルアップ連携PJ｜数値進捗サマリー</h1>
+      <span class="meta">更新日: <span id="update-date">____年__月__日</span></span>
+    </header>
+
+    <h2>目標（仮置き）</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>指標</th>
+            <th>内容</th>
+            <th class="num">目標</th>
+            <th class="num">実績</th>
+            <th>メモ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>G1</strong> 声掛け</td>
+            <td>各エリアで計画説明まで届く打診（4/7 まで）</td>
+            <td class="num">10 / エリア</td>
+            <td class="num">仙台 __　東京 __　札幌 __</td>
+            <td>計30件がマックス目安</td>
+          </tr>
+          <tr>
+            <td><strong>G2</strong> HP作成</td>
+            <td>依頼〜納品（公開または納品MTG完了）</td>
+            <td class="num">5 団体</td>
+            <td class="num">__</td>
+            <td>G1後段</td>
+          </tr>
+          <tr>
+            <td><strong>G3</strong> 採用接点</td>
+            <td>Geek長期インターン等・採用に進みうる接点</td>
+            <td class="num">約2名</td>
+            <td class="num">__</td>
+            <td>定義は採用側と合わせる</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>エリア別（声掛け・G1）</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>エリア</th>
+            <th class="num">進捗 / 目標10</th>
+            <th>状況サマリー（資料用）</th>
+            <th>次の一手</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>仙台</strong></td>
+            <td class="num">__ / 10</td>
+            <td>自力・メンター経由の接続あり。再アプローチ・説明未了フォロー・チャネル拡張が論点。</td>
+            <td>未説明の再日程／断り団体の再訪／メンター以外の接点</td>
+          </tr>
+          <tr>
+            <td><strong>東京</strong></td>
+            <td class="num">__ / 10</td>
+            <td>メンター・仮声掛けで母数あり。リファ等で上積みが必要なら母数設計を確認。</td>
+            <td>残り枠の取得経路を具体名でリスト化</td>
+          </tr>
+          <tr>
+            <td><strong>札幌</strong></td>
+            <td class="num">__ / 10</td>
+            <td>チャネル偏在・フォロー継続がボトルネックになりやすい。メンター活用の実行が焦点。</td>
+            <td>エンカレ／メンター経由の打診・2回目以降のフォロー設計</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="summary">
+      <strong>一言サマリー（貼り付け用）</strong><br />
+      G1はエリアごとに声掛け10件（4/7まで）を目安に、仙台・札幌は上積みとフォロー設計、東京は残り枠の経路確保が焦点。G2・G3はパイプラインが見えた時点で追記。
+    </div>
+
+    <p class="note">
+      数値は資料作成時に直接HTMLを編集するか、スプレッドシートと突合して更新してください。配布用は印刷（PDF）推奨。
+    </p>
+  </div>
+  <script>
+    (function () {
+      var d = new Date();
+      var el = document.getElementById("update-date");
+      if (el) el.textContent = d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
+    })();
+  </script>
+</body>
+</html>
